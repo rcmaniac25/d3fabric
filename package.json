@@ -1,0 +1,21 @@
+{
+    "name": "d3fabric",
+    "version": "1.0.0",
+    "description": "Setup system to allow FabricJS Canvas usage via d3.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rcmaniac25/d3fabric.git"
+    },
+    "keywords": [
+        "canvas",
+        "d3",
+        "fabric"
+    ],
+    "author": "Vincent Simonetti",
+    "license": "MIT",
+    "devDependencies": {
+        "gulp-concat": "~2.2.0",
+        "gulp": "~3.6.0",
+        "gulp-uglify": "~0.2.1"
+    }
+}
