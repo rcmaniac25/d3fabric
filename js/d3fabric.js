@@ -1,3 +1,6 @@
+/**
+ * Basix class definition and setup for usage.
+ */
 function d3Fabric(d3, fabric, gsap) {
 	if (!d3 || !fabric) {
 		return;
@@ -54,10 +57,14 @@ function d3Fabric(d3, fabric, gsap) {
      * isn't proper...) and have copies of the "original" function, which is actually the
      * same function that will be replacing it because it was setup already.
      */
-    d3.fabric = this;
+    d3.fabric = d3Fabric;
 
-    this.version = "1.0.0";
-    this.__variables__ = {};
+    d3Fabric.version = "1.0.0";
+    d3Fabric.__internal__ = {
+        d3: d3,
+        fabric: fabric,
+
+        gsap: gsap,
+        d3_fabric_use_GSAP: gsap && parseVersion(gsap.version).atLeast(1, 11)
+    };
 }
-
-//TODO

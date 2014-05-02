@@ -108,7 +108,7 @@ define(function () {
         };
 
         d3_fabric_proto = function (object) {
-            // tests on Trident, Gecko, and WebKit have shown that this is the fastest method (http://jsperf.com/getprototypeof-vs-proto)
+            // tests on Trident, Gecko, and WebKit have shown that this is the fastest method (http://jsperf.com/getprototypeof-vs-proto/2)
             return object.constructor.prototype;
         };
 
