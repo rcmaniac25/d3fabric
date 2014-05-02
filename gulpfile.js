@@ -9,8 +9,10 @@ var sources = [
 		'./js/prototype.js', 
 		'./js/gsap.js',
 		'./js/fabric.js',
-		'./js/override.js'
-	] //, './js/!(d3fabric)*.js']
+		'./js/override.js',
+		'./js/**/setup.js',
+		'./js/**/!(setup)*.js'
+	]
 
 /* Main gulp task to minify and concat assets */
 gulp.task('build', function () {
