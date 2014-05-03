@@ -1,5 +1,5 @@
 /*jslint nomen: true, plusplus: true */
-/*global console, window*/
+/*global console, window, Cubic*/
 
 /**
  * Basix class definition and setup for usage.
