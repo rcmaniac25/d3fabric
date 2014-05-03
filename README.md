@@ -19,13 +19,13 @@ desktop and mobile, which is makes sense until you find out that SVG is quite sl
 What isn't slow? Canvas.
 
 Can d3.js work with Canvas? Nope. A simple Google search will give you many "uses" of d3 with Canvas,
-and requests 
+and requests for its interop.
 
 To avoid working directly with Canvas and it's low-level API, the decision to use [FabricJS](http://fabricjs.com/) was made.
 
 The next challenge? Getting d3 to interact with Canvas, through FabricJS.
 
-This is where d3-Fabric was developed, so that d3 can be used but the results are written to a Canvas element.
+In early 2014, d3-Fabric was developed, so that d3 can be used but the results are written to a Canvas element.
 
 Usage
 =====
@@ -62,19 +62,32 @@ cell.append("text")
 Building
 =====
 
-TODO
+To build the project, first install the dependencies.
+```
+$ npm install
+$ npm install -g gulp
+```
+And then simply run:
+```
+$ gulp
+[gulp] Using gulpfile Path/to/D3Canvas/gulpfile.js
+[gulp] Starting 'build'...
+[gulp] Finished 'build' after 15 ms
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after 12 μs
+```
+To generate `d3fabric.min.js` in the `build/` directory.
 
 Todo
 =====
 
 Lots. Mainly:
 
-1. Actually getting the library to be something other then a monolithic js file.
-2. Simplification of the `selection.attr` function.
-3. Examples
-4. Unit tests
-5. API documentation
-6. Performance improvements (see below)
+1. Simplification of the `selection.attr` function.
+2. Examples
+3. Unit tests
+4. API documentation
+5. Performance improvements (see below)
 
 Performance
 =====
