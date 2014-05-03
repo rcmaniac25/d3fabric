@@ -3,13 +3,13 @@
  * This is useful to determine if animation can be performed without it lagging.
  */
 (function (d3fInternal) {
-    var d3_fabric_util_proto = d3fInternal.d3_fabric_util_proto;
-	if (!d3_fabric_util_proto.testRenderSpeed) {
-        var fabric = d3fInternal.fabric;
-        var d3 = d3fInternal.d3;
+    'use strict';
 
-        var d3_fabric_util_render_test = null;
-
+    var d3_fabric_util_proto = d3fInternal.d3_fabric_util_proto,
+        fabric = d3fInternal.fabric,
+        d3 = d3fInternal.d3,
+        d3_fabric_util_render_test = null;
+    if (!d3_fabric_util_proto.testRenderSpeed) {
         d3_fabric_util_proto.testRenderSpeed = function (callback, forceTest, options) {
             var callUserCallback,
                 itemTest = 250,
@@ -176,5 +176,5 @@
             }
             return d3_fabric_util_render_test[options && supportedType(options.type) ? options.type : "circle"].perMs;
         };
-	}
-})(d3Fabric.__internal__);
+    }
+}(d3Fabric.__internal__));

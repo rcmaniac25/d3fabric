@@ -2,8 +2,10 @@
  * Matrix util functions.
  */
 (function (d3fInternal) {
+    'use strict';
+
     var d3_fabric_util_matrix_proto = d3fInternal.d3_fabric_util_matrix_proto;
-	if (!d3_fabric_util_matrix_proto.createTranslation) {
+    if (!d3_fabric_util_matrix_proto.createTranslation) {
         //-createTranslation
         d3_fabric_util_matrix_proto.createTranslation = function (x, y) {
             return [1, 0, 0, 1, x, y];
@@ -28,5 +30,5 @@
 
         //-multiply
         d3_fabric_util_matrix_proto.multiply = d3fInternal.fabric.util.multiplyTransformMatrices;
-	}
-})(d3Fabric.__internal__);
+    }
+}(d3Fabric.__internal__));

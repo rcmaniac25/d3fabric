@@ -1,11 +1,14 @@
+/*jslint nomen: true, plusplus: true */
+/*global console, window*/
+
 /**
  * Basix class definition and setup for usage.
  */
 function d3Fabric(d3, fabric, gsap) {
-	if (!d3 || !fabric) {
-		return;
-	}
-	function parseVersion(ver) {
+    'use strict';
+
+    if (!d3 || !fabric) { return; }
+    function parseVersion(ver) {
         var res = {
             major: 0,
             minor: 0,

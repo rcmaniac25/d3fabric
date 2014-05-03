@@ -5,14 +5,14 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 var sources = [
-		'./js/d3fabric.js', 
-		'./js/prototype.js', 
-		'./js/gsap.js',
-		'./js/fabric.js',
-		'./js/override.js',
-		'./js/**/setup.js',
-		'./js/**/!(setup)*.js'
-	]
+        './js/d3fabric.js', 
+        './js/prototype.js', 
+        './js/gsap.js',
+        './js/fabric.js',
+        './js/d3.js',
+        './js/**/setup.js',
+        './js/**/!(setup)*.js'
+    ]
 
 /* Main gulp task to minify and concat assets */
 gulp.task('build', function () {

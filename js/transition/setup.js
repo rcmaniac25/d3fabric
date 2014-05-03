@@ -2,7 +2,9 @@
  * Setup for transitions
  */
 (function (d3Fabric, d3fInternal) {
-	if (!d3fInternal.d3_fabric_transition_proto) {
+    'use strict';
+
+    if (!d3fInternal.d3_fabric_transition_proto) {
         d3Fabric.transition = d3fInternal.d3_fabric_transition_proto = {};
-	}
-})(d3Fabric, d3Fabric.__internal__);
+    }
+}(d3Fabric, d3Fabric.__internal__));

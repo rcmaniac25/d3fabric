@@ -2,14 +2,16 @@
  * Setup of prototype modification functions.
  */
 (function (d3fInternal) {
-	if (!d3fInternal.d3_fabric_proto) {
-		d3fInternal.d3_fabric_proto = function (object) {
+    'use strict';
+
+    if (!d3fInternal.d3_fabric_proto) {
+        d3fInternal.d3_fabric_proto = function (object) {
             // tests on Trident, Gecko, and WebKit have shown that this is the fastest method (http://jsperf.com/getprototypeof-vs-proto/2)
             return object.constructor.prototype;
         };
 
         var d3_fabric_subclass_proto_name = "__proto__", // Blame jslint...
-        	d3_fabric_subclass;
+            d3_fabric_subclass;
 
         //prototype functions (d3_fabric_subclass based off one from d3)
         d3_fabric_subclass = Object.setPrototypeOf ? function (object, prototype) {
@@ -28,19 +30,19 @@
         d3fInternal.d3_fabric_selection = function (groups) {
             d3_fabric_subclass(groups, d3fInternal.d3_fabric_selection_proto);
             return groups;
-        }
+        };
         d3fInternal.d3_fabric_selectionEnter = function (groups) {
             d3_fabric_subclass(groups, d3fInternal.d3_fabric_selectionEnter_proto);
             return groups;
-        }
+        };
         d3fInternal.d3_default_selection = function (groups) {
             d3_fabric_subclass(groups, d3fInternal.d3.selection.prototype);
             return groups;
-        }
+        };
         d3fInternal.d3_fabric_transition = function (groups, id) {
             d3_fabric_subclass(groups, d3fInternal.d3_fabric_transition_proto);
             groups.fabricAniId = id;
             return groups;
-        }
-	}
-})(d3Fabric.__internal__);
+        };
+    }
+}(d3Fabric.__internal__));

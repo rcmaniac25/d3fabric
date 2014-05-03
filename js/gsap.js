@@ -2,8 +2,10 @@
  * Support for Green Sock Animation Platform (GSAP)
  */
 (function (d3fInternal) {
-	if (!d3fInternal.d3_fabric_transition_cleanup) {
-		d3fInternal.d3_fabric_transition_cleanup = function (lock, id) {
+    'use strict';
+
+    if (!d3fInternal.d3_fabric_transition_cleanup) {
+        d3fInternal.d3_fabric_transition_cleanup = function (lock, id) {
             lock.count = lock.count - 1;
             if (lock.count) {
                 delete lock[id];
@@ -106,5 +108,5 @@
             }); // window._gsQueue.push
             if (window._gsDefine) { window._gsQueue.pop()(); }
         }
-	}
-})(d3Fabric.__internal__);
+    }
+}(d3Fabric.__internal__));
