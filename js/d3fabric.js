@@ -1,8 +1,8 @@
 /*jslint nomen: true, plusplus: true */
-/*global console, window, Cubic*/
+/*global console, window, Cubic, TweenLite, EaseLookup*/
 
 /**
- * Basix class definition and setup for usage.
+ * Basic class definition and setup for usage.
  */
 function d3Fabric(d3, fabric, gsap) {
     'use strict';
