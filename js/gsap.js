@@ -5,6 +5,7 @@
     'use strict';
 
     if (!d3fInternal.d3_fabric_transition_cleanup) {
+        // Here only so that a guard exists for setup (otherwise it would be in transition/setup.js)
         d3fInternal.d3_fabric_transition_cleanup = function (lock, id) {
             lock.count = lock.count - 1;
             if (lock.count) {
