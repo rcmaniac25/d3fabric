@@ -30,7 +30,12 @@ In early 2014, d3-Fabric was developed, so that d3 can be used but the results a
 Usage
 =====
 
-TODO
+Requirements:
+* d3.js 3.4.0 or higher
+* FabricJS 1.4.2 or higher
+* [Optional] GSAP 1.11 or higher
+
+TODO: how to actually init and use the library
 
 Usage from one project to reproduce [Zoomable Treemap](http://mbostock.github.io/d3/talk/20111018/treemap.html):
 ```
@@ -70,7 +75,7 @@ $ npm install -g gulp
 And then simply run:
 ```
 $ gulp
-[gulp] Using gulpfile Path/to/D3Canvas/gulpfile.js
+[gulp] Using gulpfile Path/to/d3fabric/gulpfile.js
 [gulp] Starting 'build'...
 [gulp] Finished 'build' after 15 ms
 [gulp] Starting 'default'...
@@ -88,6 +93,7 @@ Lots. Mainly:
 3. Unit tests
 4. API documentation
 5. Performance improvements (see below)
+6. Probably support node.js
 
 Performance
 =====
