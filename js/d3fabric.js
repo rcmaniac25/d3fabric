@@ -70,4 +70,28 @@ function d3Fabric(d3, fabric, gsap) {
         gsap: gsap,
         d3_fabric_use_GSAP: gsap && parseVersion(gsap.version).atLeast(1, 11)
     };
+    if (d3Fabric.__init__) {
+        d3Fabric.__init__.forEach(function (func) {
+            func(d3Fabric.__internal__, d3Fabric);
+        });
+        delete d3Fabric.__init__;
+    }
+}
+
+/**
+ * Execute or store any init functions to use d3-Fabric.
+ * 
+ * Primary purpose for this is that d3 and Fabric are required for use and may
+ * not have been loaded yet. So it can't just be setup at load time. Loading
+ * concept based of GSAP's plugin loading.
+ */
+function d3Babric_init(func) {
+    'use strict';
+
+    if (d3Fabric.__internal__) {
+        func(d3Fabric.__internal__, d3Fabric);
+    } else {
+        if (!d3Fabric.__init__) { d3Fabric.__init__ = []; }
+        d3Fabric.__init__.push(func);
+    }
 }

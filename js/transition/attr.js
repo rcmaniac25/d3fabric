@@ -1,7 +1,7 @@
 /**
  * attr function for d3 transition class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     // Compare two arrays
@@ -61,4 +61,4 @@
             return d3fInternal.d3_fabric_transition_tween(this, "attr." + nameNS, value, attrTween);
         };
     }
-}(d3Fabric.__internal__));
+});

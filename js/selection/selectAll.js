@@ -1,7 +1,7 @@
 /**
  * selectAll function for d3 selection class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     if (!d3fInternal.d3_fabric_selection_proto.selectAll) {
@@ -10,4 +10,4 @@
             return d3fInternal.d3_fabric_selection(d3fInternal.d3.selection.prototype.selectAll.call(this, selector));
         };
     }
-}(d3Fabric.__internal__));
+});

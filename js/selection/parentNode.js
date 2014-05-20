@@ -1,7 +1,7 @@
 /**
  * parentNode function for d3 selection class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     if (!d3fInternal.d3_fabric_selection_proto.parentNode) {
@@ -15,4 +15,4 @@
             return canvas instanceof d3fInternal.fabric.Canvas ? n.parentNode.parentNode : d3fInternal.d3_fabric_is_fabric_object(n) ? null : n.parentNode;
         };
     }
-}(d3Fabric.__internal__));
+});

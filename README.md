@@ -1,7 +1,7 @@
 d3-Fabric
 =====
 
-d3.js uses SVG, but you want to use Canvas.
+d3.js is often used with SVG, but you want to use Canvas.
 
 Luckily, d3-Fabric has a solution for you!
 
@@ -18,8 +18,8 @@ desktop and mobile, which is makes sense until you find out that SVG is quite sl
 
 What isn't slow? Canvas.
 
-Can d3.js work with Canvas? Nope. A simple Google search will give you many "uses" of d3 with Canvas,
-and requests for its interop.
+Can d3.js work with Canvas? Not in the way we hoped. It seemed like numerous requests for interop and
+workarounds were developed. But it didn't let us to just say "append('rect')" and be done with it.
 
 To avoid working directly with Canvas and it's low-level API, the decision to use [FabricJS](http://fabricjs.com/) was made.
 
@@ -90,10 +90,12 @@ Lots. Mainly:
 
 1. Simplification of the `selection.attr` function.
 2. Examples
-3. Unit tests
-4. API documentation
-5. Performance improvements (see below)
-6. Probably support node.js
+3. Better input support (currently it "works" but not well)
+4. Unit tests
+5. API documentation
+6. Performance improvements (see below)
+7. Interop with other portions of d3
+8. Probably support node.js
 
 Performance
 =====

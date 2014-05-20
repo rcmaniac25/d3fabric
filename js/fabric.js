@@ -1,7 +1,7 @@
 /**
  * FabricJS overloading functions
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     var fabric = d3fInternal.fabric,
@@ -68,4 +68,4 @@
             }
         });
     }
-}(d3Fabric.__internal__));
+});

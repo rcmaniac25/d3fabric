@@ -1,7 +1,7 @@
 /**
  * append function for d3 selection class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     if (!d3fInternal.d3_fabric_selection_proto.append) {
@@ -73,4 +73,4 @@
         // Selection-enter
         d3fInternal.d3_fabric_selectionEnter_proto.append = d3fInternal.d3_fabric_selection_proto.append;
     }
-}(d3Fabric.__internal__));
+});

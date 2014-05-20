@@ -2,7 +2,7 @@
  * Utility function to test how many elements can be rendered within a given time frame.
  * This is useful to determine if animation can be performed without it lagging.
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     var d3_fabric_util_proto = d3fInternal.d3_fabric_util_proto,
@@ -177,4 +177,4 @@
             return d3_fabric_util_render_test[options && supportedType(options.type) ? options.type : "circle"].perMs;
         };
     }
-}(d3Fabric.__internal__));
+});

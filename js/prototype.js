@@ -1,7 +1,7 @@
 /**
  * Setup of prototype modification functions.
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     if (!d3fInternal.d3_fabric_proto) {
@@ -45,4 +45,4 @@
             return groups;
         };
     }
-}(d3Fabric.__internal__));
+});

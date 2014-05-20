@@ -1,7 +1,7 @@
 /**
  * Setup for transitions and the actual animation functions
  */
-(function (d3Fabric, d3fInternal) {
+d3Babric_init(function (d3fInternal, d3Fabric) {
     'use strict';
 
     function d3_fabric_timer_call(fabricCanvas, callback) {
@@ -111,4 +111,4 @@
             }
         };
     }
-}(d3Fabric, d3Fabric.__internal__));
+});

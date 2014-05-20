@@ -1,7 +1,7 @@
 /**
  * Support for angle util functions.
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     var d3_fabric_util_proto = d3fInternal.d3_fabric_util_proto,
@@ -13,4 +13,4 @@
         //-degreesToRadians
         d3_fabric_util_proto.degreesToRadians = fabric.util.degreesToRadians;
     }
-}(d3Fabric.__internal__));
+});

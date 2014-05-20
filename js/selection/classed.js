@@ -1,7 +1,7 @@
 /**
  * classed function for d3 selection class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     var d3 = d3fInternal.d3,
@@ -99,4 +99,4 @@
             return this.each(d3_fabric_selection_classed(name, value));
         };
     }
-}(d3Fabric.__internal__));
+});

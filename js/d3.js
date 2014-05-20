@@ -1,7 +1,7 @@
 /**
  * Top-level function overloads for d3.js
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     function addCanvas(func, args) {
@@ -119,4 +119,4 @@
                     d3fInternal.d3_transition.apply(this, arguments);
         };
     }
-}(d3Fabric.__internal__));
+});

@@ -1,7 +1,7 @@
 /**
  * insert function for d3 selection class
  */
-(function (d3fInternal) {
+d3Babric_init(function (d3fInternal) {
     'use strict';
 
     // Compare object types
@@ -183,4 +183,4 @@
             return d3fInternal.d3_fabric_selection_proto.insert.call(this, name, before);
         };
     }
-}(d3Fabric.__internal__));
+});
