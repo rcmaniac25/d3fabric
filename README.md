@@ -35,24 +35,36 @@ Requirements:
 * FabricJS 1.4.2 or higher
 * [Optional] GSAP 1.11 or higher
 
-TODO: how to actually init and use the library
+The simplist way to do this is to use d3-Fabric is to load d3js, FabricJS, and d3-Fabric, then to simply call:
+```
+d3Fabric(d3, fabric);
+```
 
-Usage from one project to reproduce [Zoomable Treemap](http://mbostock.github.io/d3/talk/20111018/treemap.html):
+If you want to use the Green Sock Animation Platform (GSAP), then simply include that script, at least TweenLite,
+and do the following instead:
+```
+d3Fabric(d3, fabric, TweenLite);
+```
+
+Usage from the example project to reproduce [Zoomable Treemap](http://mbostock.github.io/d3/talk/20111018/treemap.html):
 ```
 var nodes = treemap.nodes(root)
-    .filter(function (d) { return !d.children; }),
+    .filter(function (d) { return !d.children; });
 
-    cell = fabricElement.data(nodes)
+var cell = canvasArea.selectAll("group")
+    .data(nodes)
     .enter().append("group")
     .classed("cell", true)
+    .attr("originX", "center")
+    .attr("originY", "center")
     .attr("left", function (d) { return d.x; })
     .attr("top", function (d) { return d.y; })
-    .on("selected", function (d) { return zoom(node === d.parent ? root : d.parent, true); });
+    .on("mousedown", function(d) { return zoom(node == d.parent ? root : d.parent); });
 
 cell.append("rect")
-    .attr("width", function (d) { return d.dx - 1; })
-    .attr("height", function (d) { return d.dy - 1; })
-    .style("fill", function (d) { return color(d.parent.name); });
+    .attr("width", function (d) { return Math.max(d.dx - 1, 0); })
+    .attr("height", function (d) { return Math.max(d.dy - 1, 0); })
+    .attr("fill", function(d) { return color(d.parent.name); });
 
 cell.append("text")
     .attr("originX", "center")
@@ -81,21 +93,23 @@ $ gulp
 [gulp] Starting 'default'...
 [gulp] Finished 'default' after 12 μs
 ```
-To generate `d3fabric.min.js` in the `build/` directory.
+This will generate `d3fabric.min.js` in the `build/` directory.
+
+To build the non-minifed version, call `gulp concat` instead.
 
 Todo
 =====
 
 Lots. Mainly:
 
-1. Simplification of the `selection.attr` function.
-2. Examples
-3. Better input support (currently it "works" but not well)
+1. Make sure example is clickable.
+2. Simplification of the `selection.attr` function.
+3. Better input support (currently it "works" but not well, giving the appearence of not working at all)
 4. Unit tests
 5. API documentation
 6. Performance improvements (see below)
 7. Interop with other portions of d3
-8. Probably support node.js
+8. Support node.js
 
 Performance
 =====
@@ -120,4 +134,4 @@ Contribute
 
 All are welcome.
 
-I am a noob when it comes to JavaScript, look at my [repos](https://github.com/rcmaniac25?tab=repositories), most if not all are native code. Not web projects.
+I am a noob when it comes to JavaScript, look at my other [repos](https://github.com/rcmaniac25?tab=repositories), most if not all are native code. Not web projects.
